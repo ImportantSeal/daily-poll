@@ -1,0 +1,22 @@
+{
+  "name": "@paivankysymys/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "deploy": "wrangler deploy",
+    "d1:migrate:local": "wrangler d1 migrations apply daily-question-db --local",
+    "d1:migrate:remote": "wrangler d1 migrations apply daily-question-db --remote"
+  },
+  "dependencies": {
+    "@paivankysymys/shared": "file:../../packages/shared"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260304.0",
+    "typescript": "^5.8.2",
+    "wrangler": "^4.5.0"
+  }
+}

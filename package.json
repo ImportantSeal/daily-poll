@@ -1,0 +1,17 @@
+{
+  "name": "paivan-kysymys-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:api": "npm --prefix apps/api run dev",
+    "build:web": "npm --prefix apps/web run build",
+    "build:api": "npm --prefix apps/api run build",
+    "build": "npm run build:web && npm run build:api",
+    "typecheck": "npm --prefix packages/shared run typecheck && npm --prefix apps/api run typecheck && npm --prefix apps/web run typecheck"
+  }
+}

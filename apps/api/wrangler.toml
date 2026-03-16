@@ -1,0 +1,13 @@
+name = "paivan-kysymys-api"
+main = "src/index.ts"
+compatibility_date = "2026-03-05"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGIN = "https://<username>.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "daily-question-db"
+database_id = "<YOUR_D1_DATABASE_ID>"
+migrations_dir = "migrations"
