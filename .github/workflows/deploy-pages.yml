@@ -8,6 +8,7 @@ on:
       - "apps/web/**"
       - "packages/shared/**"
       - "package.json"
+      - "package-lock.json"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -33,6 +34,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Validate API URL variable
         run: |
@@ -42,7 +44,7 @@ jobs:
           fi
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build web app
         env:
